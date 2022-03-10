@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:number_trivia/authentication/presentation/login_screen.dart';
 import 'package:number_trivia/core/network/network_info.dart';
 import 'package:number_trivia/feature/data/data_sources/local_data_sources/post_local_data_source.dart';
 import 'package:number_trivia/feature/data/data_sources/local_data_sources/post_local_data_source_impl.dart';
@@ -42,6 +43,17 @@ class _MyAppState extends State<MyApp> {
         PostCubit(getPostsUseCase: GetPostsUseCase(repository: _repository));
   }
 
+//  http.Response response = await authRepository.post(
+//       url: 'http://192.168.1.9/elfatek/public/api/login',
+//       //super.loginPath,
+//       headers: {
+//         'Content-type': 'application/json',
+//         'Accept': 'application/json',
+//         'Connection': 'keep-alive'
+//       },
+//       //super.headers,
+//       user: user,
+//     );
   @override
   void dispose() {
     _networkInfo.dispose();
@@ -64,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         title: 'My Notes',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.deepOrange),
-        home: HomePage(),
+        home: LoginScreen(),
       ),
     );
     // initialRoute: '/',

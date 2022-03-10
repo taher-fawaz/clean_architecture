@@ -9,6 +9,11 @@ abstract class UseCase<Type, Params> {
   Future<Either<Failure, List<Type>>> call(Params params);
 }
 
+abstract class AuthenticationUseCase<Type, Params> {
+  Future<Either<Failure, Type>> signIn(Params params);
+  Future<Either<Failure, Type>> signUp(Params params);
+}
+
 // This will be used by the code calling the use case whenever the use case
 // doesn't accept any parameters.
 class NoParams extends Equatable {
