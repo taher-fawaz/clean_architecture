@@ -32,9 +32,11 @@ Future<void> init() async {
   sl.registerLazySingleton<GetPostsUseCase>(
       () => GetPostsUseCase(repository: sl.call()));
 
-  // //repository
-  // sl.registerLazySingleton<PostsRepository>(() => PostsRepositoryImpl(
-  //     remoteDataSource: sl.call(), localDataSource: sl.call()));
+  //repository
+  sl.registerLazySingleton<PostsRepository>(() => PostsRepositoryImpl(
+      remoteDataSource: sl.call(),
+      localDataSource: sl.call(),
+      networkInfo: sl.call()));
 
   //data source
   sl.registerLazySingleton<PostsRemoteDataSource>(

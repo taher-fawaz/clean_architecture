@@ -67,9 +67,10 @@ class _MyAppState extends State<MyApp> {
       providers: [
         // BlocProvider<AuthCubit>(
         //     create: (_) => di.sl<AuthCubit>()..appStarted()),
-        BlocProvider<PostCubit>(create: (_) => _postCubit
-            //di.sl<PostCubit>()
-            ),
+        BlocProvider<PostCubit>(
+            create: (_) =>
+                // _postCubit
+                di.sl<PostCubit>()),
         // BlocProvider<NoteCubit>(create: (_) => di.sl<NoteCubit>()),
       ],
       child: MaterialApp(
